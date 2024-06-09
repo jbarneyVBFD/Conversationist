@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690753EE2C16282E00F74F95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690753ED2C16282E00F74F95 /* AppDelegate.swift */; };
 		69604E7E2C13BAF100ED6E8A /* ConversationistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69604E7D2C13BAF100ED6E8A /* ConversationistApp.swift */; };
 		69604E802C13BAF100ED6E8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69604E7F2C13BAF100ED6E8A /* ContentView.swift */; };
 		69604E822C13BAF300ED6E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69604E812C13BAF300ED6E8A /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		5E01E5C6D18CCAD5A8316AC1 /* Pods_Conversationist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Conversationist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		690753ED2C16282E00F74F95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69604E7A2C13BAF100ED6E8A /* Conversationist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conversationist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69604E7D2C13BAF100ED6E8A /* ConversationistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationistApp.swift; sourceTree = "<group>"; };
 		69604E7F2C13BAF100ED6E8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				69604E7F2C13BAF100ED6E8A /* ContentView.swift */,
 				69604E812C13BAF300ED6E8A /* Assets.xcassets */,
 				69604E832C13BAF300ED6E8A /* Preview Content */,
+				690753ED2C16282E00F74F95 /* AppDelegate.swift */,
 			);
 			path = Conversationist;
 			sourceTree = "<group>";
@@ -88,7 +91,6 @@
 				966F0CF356BB0CD27D6E2700 /* Pods-Conversationist.debug.xcconfig */,
 				940F7BA3BF11F79557C38660 /* Pods-Conversationist.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -206,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690753EE2C16282E00F74F95 /* AppDelegate.swift in Sources */,
 				69604E802C13BAF100ED6E8A /* ContentView.swift in Sources */,
 				69604E7E2C13BAF100ED6E8A /* ConversationistApp.swift in Sources */,
 			);

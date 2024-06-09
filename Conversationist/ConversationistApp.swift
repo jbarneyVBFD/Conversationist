@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct ConversationistApp: App {
+    // Create the AppDelegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
             ContentView()
