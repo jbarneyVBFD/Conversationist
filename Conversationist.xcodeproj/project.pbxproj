@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		690753EE2C16282E00F74F95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690753ED2C16282E00F74F95 /* AppDelegate.swift */; };
+		690753F12C162FA000F74F95 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690753F02C162FA000F74F95 /* SignUpView.swift */; };
 		69604E7E2C13BAF100ED6E8A /* ConversationistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69604E7D2C13BAF100ED6E8A /* ConversationistApp.swift */; };
 		69604E802C13BAF100ED6E8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69604E7F2C13BAF100ED6E8A /* ContentView.swift */; };
 		69604E822C13BAF300ED6E8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69604E812C13BAF300ED6E8A /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		5E01E5C6D18CCAD5A8316AC1 /* Pods_Conversationist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Conversationist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		690753ED2C16282E00F74F95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		690753F02C162FA000F74F95 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		69604E7A2C13BAF100ED6E8A /* Conversationist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conversationist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69604E7D2C13BAF100ED6E8A /* ConversationistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationistApp.swift; sourceTree = "<group>"; };
 		69604E7F2C13BAF100ED6E8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		690753EF2C162F8200F74F95 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				690753F02C162FA000F74F95 /* SignUpView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		69604E712C13BAF100ED6E8A = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 		69604E7C2C13BAF100ED6E8A /* Conversationist */ = {
 			isa = PBXGroup;
 			children = (
+				690753EF2C162F8200F74F95 /* Views */,
 				69604E7D2C13BAF100ED6E8A /* ConversationistApp.swift */,
 				69604E7F2C13BAF100ED6E8A /* ContentView.swift */,
 				69604E812C13BAF300ED6E8A /* Assets.xcassets */,
@@ -208,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690753F12C162FA000F74F95 /* SignUpView.swift in Sources */,
 				690753EE2C16282E00F74F95 /* AppDelegate.swift in Sources */,
 				69604E802C13BAF100ED6E8A /* ContentView.swift in Sources */,
 				69604E7E2C13BAF100ED6E8A /* ConversationistApp.swift in Sources */,
@@ -347,7 +359,17 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Conversationist/Preview Content\"";
 				DEVELOPMENT_TEAM = H9RU7YDKJ3;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AWSCore/AWSCore.framework/Headers\"",
+					"${PODS_ROOT}/Headers/Public",
+					"${PODS_ROOT}/Headers/Public/AWSCore",
+					"${PODS_ROOT}/Headers/Public/AWSCognito",
+				);
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -377,7 +399,17 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Conversationist/Preview Content\"";
 				DEVELOPMENT_TEAM = H9RU7YDKJ3;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AWSCore/AWSCore.framework/Headers\"",
+					"${PODS_ROOT}/Headers/Public",
+					"${PODS_ROOT}/Headers/Public/AWSCore",
+					"${PODS_ROOT}/Headers/Public/AWSCognito",
+				);
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
