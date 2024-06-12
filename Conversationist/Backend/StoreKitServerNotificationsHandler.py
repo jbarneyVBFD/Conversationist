@@ -12,13 +12,20 @@ def lambda_handler(event, context):
     
     # Parse the event data
     try:
-        notification_type = event['notificationType']
-        data = event['data']
+        body = json.loads(event['body'])
+        notification_type = body['notificationType']
+        data = body['data']
     except KeyError as e:
         logger.error(f"Key error: {e}")
         return {
             'statusCode': 400,
             'body': json.dumps(f'Missing key in event data: {e}')
+        }
+    except json.JSONDecodeError as e:
+        logger.error(f"JSON decode error: {e}")
+        return {
+            'statusCode': 400,
+            'body': json.dumps(f'Invalid JSON in event body: {e}')
         }
     
     # Process the notification based on its type
