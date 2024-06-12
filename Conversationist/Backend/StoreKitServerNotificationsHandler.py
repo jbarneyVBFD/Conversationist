@@ -28,19 +28,28 @@ def lambda_handler(event, context):
             'body': json.dumps(f'Invalid JSON in event body: {e}')
         }
     
-    # Process the notification based on its type
-    if notification_type == 'INITIAL_BUY':
-        handle_initial_buy(data)
-    elif notification_type == 'CANCEL':
-        handle_cancel(data)
-    # Add other notification types as needed
-    else:
-        logger.warning(f"Unhandled notification type: {notification_type}")
-    
-    return {
-        'statusCode': 200,
-        'body': json.dumps('Processed notification successfully')
-    }
+    try:
+        if notification_type == 'INITIAL_BUY':
+            handle_initial_buy(data)
+        elif notification_type == 'CANCEL':
+            handle_cancel(data)
+        else:
+            logger.warning(f"Unhandled notification type: {notification_type}")
+            return {
+                'statusCode': 400,
+                'body': json.dumps(f'Unhandled notification type: {notification_type}')
+            }
+        
+        return {
+            'statusCode': 200,
+            'body': json.dumps('Processed notification successfully')
+        }
+    except Exception as e:
+        logger.error(f"Processing error: {e}")
+        return {
+            'statusCode': 500,
+            'body': json.dumps(f'Error processing notification: {e}')
+        }
 
 def handle_initial_buy(data):
     # Implement logic to handle initial buy
