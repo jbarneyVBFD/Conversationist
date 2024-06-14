@@ -102,5 +102,5 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
-Conversationist/jwt/*
-Conversationist/PyJWT-2.8.0.dist-info/*
+jwt/
+PyJWT-2.8.0.dist-info/
