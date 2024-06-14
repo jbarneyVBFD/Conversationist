@@ -103,3 +103,4 @@ iOSInjectionProject/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 jwt/*
+PyJWT-2.8.0.dist-info/*
