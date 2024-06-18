@@ -105,3 +105,5 @@ iOSInjectionProject/
 /Conversationist/jwt/
 /Conversationist/PyJWT-2.8.0.dist-info/
 /Conversationist/Preview Content/
+.env
+
