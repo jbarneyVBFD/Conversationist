@@ -25,6 +25,9 @@ class StoreManager: ObservableObject {
     var updateListenerTask: Task<Void, Error>? = nil
     
     init() {
+        
+        //Initialize empty products then do a product request asynchronously to fill them in.
+        subscriptions = []
 
         //Start a transaction listener as close to app launch as possible so you don't miss any transactions.
         updateListenerTask = listenForTransactions()
@@ -47,7 +50,7 @@ class StoreManager: ObservableObject {
                     let transaction = try self.checkVerified(result)
 
                     //Deliver content to the user.
-                    await self.updatePurchasedIdentifiers(transaction)
+//                    await self.updatePurchasedIdentifiers(transaction)
 
                     //Always finish a transaction.
                     await transaction.finish()
@@ -79,7 +82,7 @@ class StoreManager: ObservableObject {
             let transaction = try checkVerified(verification)
 
             //Deliver content to the user.
-            await updatePurchasedIdentifiers(transaction)
+//            await updatePurchasedIdentifiers(transaction)
 
             //Always finish a transaction.
             await transaction.finish()
@@ -91,4 +94,34 @@ class StoreManager: ObservableObject {
             return nil
         }
     }
+    
+    func isPurchased(_ productIdentifier: String) async throws -> Bool {
+        //Get the most recent transaction receipt for this `productIdentifier`.
+        guard let result = await Transaction.latest(for: productIdentifier) else {
+            //If there is no latest transaction, the product has not been purchased.
+            return false
+        }
+
+        let transaction = try checkVerified(result)
+
+        //Ignore revoked transactions, they're no longer purchased.
+
+        //For subscriptions, a user can upgrade in the middle of their subscription period. The lower service
+        //tier will then have the `isUpgraded` flag set and there will be a new transaction for the higher service
+        //tier. Ignore the lower service tier transactions which have been upgraded.
+        return transaction.revocationDate == nil && !transaction.isUpgraded
+    }
+    
+    func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
+        //Check if the transaction passes StoreKit verification.
+        switch result {
+        case .unverified:
+            //StoreKit has parsed the JWS but failed verification. Don't deliver content to the user.
+            throw StoreError.failedVerification
+        case .verified(let safe):
+            //If the transaction is verified, unwrap and return it.
+            return safe
+        }
+    }
+    
 }
