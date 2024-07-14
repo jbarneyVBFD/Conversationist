@@ -106,4 +106,7 @@ iOSInjectionProject/
 /Conversationist/PyJWT-2.8.0.dist-info/
 /Conversationist/Preview Content/
 .env
+Conversationist/.env
 todo.txt
+Key/
+Conversationist/Key
